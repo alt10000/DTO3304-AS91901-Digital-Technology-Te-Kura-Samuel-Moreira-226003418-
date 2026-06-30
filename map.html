@@ -13,20 +13,22 @@
 
 <body>
 
-    <header class="header"></header>
+    <header class="header">
+        <nav class="map-nav">
+            <label for="year-select" class="map-nav-label">Choose a year:</label>
+            <select id="year-select" class="map-nav-select"></select>
+        </nav>
+    </header>
 
-    <nav>
-
-    </nav>
-
-    <main class="main">
-        <h2 class="texticon">Historia</h2>
-        <p class="texticon">the map</p>
+    <main class="main map-main">
+        <img id="map-display" class="map-display" src="" alt="Map">
     </main>
 
     <footer class="footer">
         <p>&copy; 2026 Historia. All rights reserved.</p>
     </footer>
+
+    <script src="javascript/mapProgram.js"></script>
 
 </body>
 
