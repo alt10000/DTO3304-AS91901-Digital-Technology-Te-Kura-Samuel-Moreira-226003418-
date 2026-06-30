@@ -36,15 +36,13 @@ body {
 /* Landing page main section: centers the enter button */
 .landing-main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    text-align: center;
 }
 
-.landing-title {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
- 
 .enter-button {
     display: inline-block;
     padding: 16px 40px;
