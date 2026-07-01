@@ -1,42 +1,51 @@
 // Years run from 200AD to 2000AD, jumping in gaps of roughly 33
-// years, landing on an exact century every third jump (e.g. 200, 233, 266, 300, 333, 366, 400 ...).
+// Adds three years per century: the century itself, +33, and +66
 const years = [];
 for (let century = 200; century <= 1900; century += 100) {
     years.push(century, century + 33, century + 66);
 }
+
+// adds final year separately since the loop stops at 1900
 years.push(2000);
- 
+
+// grabs empty nav bar from page
 const nav = document.getElementById('year-nav');
+// grabs image element used to display current map
 const mapDisplay = document.getElementById('map-display');
- 
+
+// updates map image's source and alt text for given year
 function showMap(year) {
     mapDisplay.src = 'images/map images/Map ' + year + 'AD.png';
     mapDisplay.alt = 'Map ' + year + 'AD';
 }
- 
+
+// displays chosen map and highlights button that was clicked
 function selectYear(year, clickedButton) {
     showMap(year);
- 
+    
+    // removes highlight from every button before adding it to new one
     const allButtons = nav.querySelectorAll('.year-btn');
     allButtons.forEach(function (btn) {
         btn.classList.remove('active');
     });
     clickedButton.classList.add('active');
 }
- 
+
+// creates one button per year and adds it to nav bar
 years.forEach(function (year) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'year-btn';
     button.textContent = year + 'AD';
- 
+    
+    // runs selectYear whenever button is clicked
     button.addEventListener('click', function () {
         selectYear(year, button);
     });
  
     nav.appendChild(button);
 });
- 
-// Show the first map by default and mark its button as active
+
+// selects first year by default when page loads
 const firstButton = nav.querySelector('.year-btn');
 selectYear(years[0], firstButton);

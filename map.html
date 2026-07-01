@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- loads Bree Serif font -->
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     <link href="images/favicon.png" rel="shortcut icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,11 +14,15 @@
 
 <body>
 
+    <!-- header, holds nav bar -->
     <header class="header">
+        <!-- empty container filled with year buttons by JavaScript -->
         <nav class="map-nav" id="year-nav"></nav>
     </header>
 
+    <!-- displays map currently selected -->
     <main class="main map-main">
+        <!-- image swapped by JavaScript when year clicked -->
         <img id="map-display" class="map-display" src="" alt="Map">
     </main>
 
@@ -25,6 +30,7 @@
         <p>Historia</p>
     </footer>
 
+    <!-- loads script that builds nav bar and swaps map -->
     <script src="javascript/mapProgram.js"></script>
 
 </body>
