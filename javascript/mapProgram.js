@@ -1,5 +1,4 @@
-// Years run from 200AD to 2000AD, jumping in gaps of roughly 33
-// Adds three years per century: the century itself, +33, and +66
+// builds year list: century, century+33, century+66, repeated up to 1900
 const years = [];
 for (let century = 200; century <= 1900; century += 100) {
     years.push(century, century + 33, century + 66);
