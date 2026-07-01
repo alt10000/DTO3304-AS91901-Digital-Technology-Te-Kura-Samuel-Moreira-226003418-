@@ -6,25 +6,37 @@ for (let century = 200; century <= 1900; century += 100) {
 }
 years.push(2000);
  
-const select = document.getElementById('year-select');
+const nav = document.getElementById('year-nav');
 const mapDisplay = document.getElementById('map-display');
- 
-years.forEach(function (year) {
-    const option = document.createElement('option');
-    option.value = year;
-    option.textContent = year + 'AD';
-    select.appendChild(option);
-});
  
 function showMap(year) {
     mapDisplay.src = 'images/map images/Map ' + year + 'AD.png';
     mapDisplay.alt = 'Map ' + year + 'AD';
 }
  
-select.addEventListener('change', function () {
-    showMap(select.value);
+function selectYear(year, clickedButton) {
+    showMap(year);
+ 
+    const allButtons = nav.querySelectorAll('.year-btn');
+    allButtons.forEach(function (btn) {
+        btn.classList.remove('active');
+    });
+    clickedButton.classList.add('active');
+}
+ 
+years.forEach(function (year) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'year-btn';
+    button.textContent = year + 'AD';
+ 
+    button.addEventListener('click', function () {
+        selectYear(year, button);
+    });
+ 
+    nav.appendChild(button);
 });
  
-// Show the first map by default
-showMap(years[0]);
- 
+// Show the first map by default and mark its button as active
+const firstButton = nav.querySelector('.year-btn');
+selectYear(years[0], firstButton);
