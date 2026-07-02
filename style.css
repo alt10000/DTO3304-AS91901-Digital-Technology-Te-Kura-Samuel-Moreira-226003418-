@@ -36,9 +36,10 @@ body {
 
 /* title text size */
 .header h1 {
+    font-family: 'Times New Roman', serif;
     font-size: 1.8em;
 }
- 
+
 /* fill space between header and footer */
 .main {
     flex: 1;
@@ -99,11 +100,11 @@ body {
 /* styles enter button */
 .enter-button {
     display: inline-block;
-    padding: 16px 40px;
+    padding: 20px 52px;
     background-color: #58472f;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border-radius: 6px;
     transition: background-color 0.2s ease;
 }
@@ -179,7 +180,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 3s ease;
+    transition: opacity 1.5s ease;
 }
 
 .map-display.active {
@@ -212,7 +213,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #ffffff;
+    color: #58472f;
     display: flex;
     align-items: center;
     justify-content: center;
