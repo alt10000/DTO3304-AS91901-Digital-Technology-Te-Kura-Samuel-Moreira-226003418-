@@ -156,18 +156,34 @@ body {
     color: #2c2c2c;
 }
 
+/*  */
+.year-btn:focus {
+    outline: 3px solid #d9c79e;
+    outline-offset: -3px;
+}
+
 /* removes padding so map image can fill whole section */
 .map-main {
     padding: 0;
     display: flex;
+    position: relative;
 }
 
 /* stretches map image to fill its container */
 .map-display {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.map-display.active {
+    opacity: 1;
 }
 
 /* splits guide page into two equal columns */
